@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Showcase</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            border-radius: 0 0 10px 10px;
+        }
+        .code-container {
+            background-color: #000000; /* Black background */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .code-container:hover {
+            transform: scale(1.02);
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap; /* Allows wrapping of long lines */
+            background-color: #000000; /* Black background */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #ffffff; /* White text */
+        }
+        code {
+            color: #ffffff; /* White text */
+        }
+        h2 {
+            margin-top: 30px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .btn {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        img {
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header text-center">
+        <h1>Code Showcase</h1>
+        <p>Here are the code snippets for the Library Management System.</p>
+    </header>
+
+    <div class="container">
+        <h2>1. index.ejs</h2>
+        <div class="code-container">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Library Management System&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;📚 Library Management System&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;a href="/books"&gt;➕ Add Books&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        <div class="text-center mt-4">
+            <h3>Screenshot of Index Page</h3>
+            <img src="index.png" alt="Index Page Screenshot" class="img-fluid" style="max-width: 600px;">
+        </div>
+
+        <h2>2. add book.ejs</h2>
+        <div class="code-container">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Add a New Book&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;📖 Add a New Book&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;form action="/books" method="POST"&gt;
+        &lt;input type="text" name="title" placeholder="Enter Book Title" required&gt;
+        &lt;input type="text" name="author" placeholder="Enter Author Name" required&gt;
+        &lt;input type="number" name="year" placeholder="Enter Year" required&gt;
+        &lt;input type="text" name="Price" placeholder="Enter Price" required&gt;
+        &lt;button type="submit" class="btn btn-success"&gt;Add Book&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        <div class="text-center mt-4">
+            <h3>Screenshot of Add Book Page</h3>
+            <img src="add.jpeg" alt="Add Book Page Screenshot" class="img-fluid" style="max-width: 600px;">
+        </div>
+
+        <h2>3. edit book.ejs</h2>
+        <div class="code-container">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Edit Book&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;✏️ Edit Book&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;form action="/books/update" method="POST"&gt;
+        &lt;input type="hidden" name="id" value="bookId"&gt; <!-- Replace bookId with actual ID -->
+        &lt;input type="text" name="title" placeholder="Enter Book Title" required&gt;
+        &lt;input type="text" name="author" placeholder="Enter Author Name" required&gt;
+        &lt;input type="number" name="year" placeholder="Enter Year" required&gt;
+        &lt;input type="text" name="Price" placeholder="Enter Price" required&gt;
+        &lt;button type="submit" class="btn btn-warning"&gt;Update Book&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        <div class="text-center mt-4">
+            <h3>Screenshot of Edit Book Page</h3>
+            <img src="edit.jpeg" alt="Edit Book Page Screenshot" class="img-fluid" style="max-width: 600px;">
+        </div>
+
+        <h2>4. books.ejs</h2>
+        <div class="code-container">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Books List&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header class="header"&gt;
+        &lt;div class="container text-center"&gt;
+            &lt;h1&gt;📖 Books Collection&lt;/h1&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;div class="container mt-4"&gt;
+        &lt;input type="text" id="searchBox" class="form-control mb-3" placeholder="🔍 Search books by title, author, or category..."&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="container mt-4"&gt;
+        &lt;a href="/books/new" class="btn btn-primary mb-3"&gt;➕ Add New Book&lt;/a&gt;
+        &lt;button onclick="window.print()" class="btn btn-secondary mb-3"&gt;🖨 Print Books List&lt;/button&gt;
+
+        &lt;table class="table table-striped table-bordered"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Title&lt;/th&gt;
+                    &lt;th&gt;Author&lt;/th&gt;
+                    &lt;th&gt;Year&lt;/th&gt;
+                    &lt;th&gt;Price&lt;/th&gt;
+                    &lt;th&gt;Actions&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;% books.forEach(book => { %&gt;
+                    &lt;tr class="book-item"&gt;
+                        &lt;td class="book-title"&gt;&lt;%= book.title %&gt;&lt;/td&gt;
+                        &lt;td class="book-author"&gt;&lt;%= book.author %&gt;&lt;/td&gt;
+                        &lt;td class="book-category"&gt;&lt;%= book.year %&gt;&lt;/td&gt;  
+                        &lt;td&gt;&lt;%= book.Price %&gt;&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;a href="/books/&lt;%= book._id %&gt;/edit" class="btn btn-warning btn-sm"&gt;✏️ Edit&lt;/a&gt;
+                            &lt;form action="/books/&lt;%= book._id %&gt;?_method=DELETE" method="POST" style="display:inline;"&gt;
+                                &lt;button type="submit" class="btn btn-danger btn-sm"&gt;🗑 Delete&lt;/button&gt;
+                            &lt;/form&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;% }) %&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;footer class="footer"&gt;
+        &lt;p&gt;&copy; 2025 Book Management System | All Rights Reserved&lt;/p&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+        document.getElementById("searchBox").addEventListener("keyup", function() {
+            let searchText = this.value.toLowerCase();
+            let books = document.querySelectorAll(".book-item");
+
+            books.forEach(book => {
+                let title = book.querySelector(".book-title").textContent.toLowerCase();
+                let author = book.querySelector(".book-author").textContent.toLowerCase();
+                let category = book.querySelector(".book-category").textContent.toLowerCase();
+
+                if (title.includes(searchText) || author.includes(searchText) || category.includes(searchText)) {
+                    book.style.display = "table-row"; // Show matching books
+                } else {
+                    book.style.display = "none"; // Hide non-matching books
+                }
+            });
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        <div class="text-center mt-4">
+            <h3>Screenshot of Books List Page</h3>
+            <img src="books.jpeg" alt="Books List Page Screenshot" class="img-fluid" style="max-width: 600px;">
+        </div>
+
+        <h2>5. server.js</h2>
+        <div class="code-container">
+            <pre><code>const express = require('express');
+const mongoose = require('./config/db'); // MongoDB connection
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+
+const app = express();
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+
+// Routes
+const bookRoutes = require('./routes/bookRoutes');
+app.use('/books', bookRoutes);
+
+// Home Route
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+// Start Server
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));</code></pre>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="conclusion.html" class="btn btn-primary">View Conclusion</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
